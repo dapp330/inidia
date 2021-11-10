@@ -1,38 +1,193 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Poppins", sans-serif;
+  background: #1b1b2f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-container {
+  background-color: #162447;
+  opacity: 80%;
+  width: 100%;
+  min-height: 13vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.logo {
+  flex: 1;
+  justify-content: start;
+  /* margin-top: 20px; */
+  margin-left: 10px;
+  color: aliceblue;
+}
+
+.logo > a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  padding: 14px 16px;
+}
+
+.nav {
+  flex: 2;
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.nav > ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.nav > ul > li {
+  float: left;
+}
+
+.nav li a {
+  display: inline-block;
+  color: aliceblue;
+  text-align: center;
+  padding: 20px 40px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav li a:hover {
+  background-color: #1f4068;
+}
+
+.dropdown {
+  display: block;
+}
+
+.dropdown > ul {
+  list-style: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  color: #1b1b2f;
+}
+
+.dropdown-menu {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  padding: 10px 15px;
+  background-color: #1b1b2f;
+  min-width: 130px;
+}
+
+.dropdown-menu a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+
+.search {
+  flex: 3;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 50px;
+}
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  top: -20px;
+}
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: #1f4068;
+  padding-right: 40px;
+  color: white;
+}
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.movie {
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  width: 30vh;
+  height: 35vh;
+}
+
+.movie-container > h1 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.parent {
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.child {
+  position: absolute;
+  display: none;
+  background-color: #1b1b2f;
+  opacity: 70%;
+  width: 30vh;
+  height: 35vh;
+  color: white;
+}
+
+.parent:hover .child {
+  display: block;
 }
