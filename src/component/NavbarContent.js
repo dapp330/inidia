@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../download.svg";
+import { Link } from "react-router-dom";
 
 const NavbarComponent = (props) => {
   return (
@@ -23,10 +23,14 @@ const NavbarComponent = (props) => {
       <div className="nav">
         <ul>
           <li>
-            <a href="">Home</a>
+            <Link to="/">
+              <span>Home</span>
+            </Link>
           </li>
           <li>
-            <a href="">Favorite</a>
+            <Link to="/favorite">
+              <span>Favorite</span>
+            </Link>
           </li>
           <li className="dropdown">
             <a href="">Menu</a>
