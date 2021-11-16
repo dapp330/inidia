@@ -37,38 +37,42 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <NavbarComponent
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
-      </div>
-      <div className="movie-container">
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <MovieList
-                movies={movies}
-                handleFavoritesClick={addFavoriteMovie}
-                favoriteComponent={AddFavoriteMovie}
-              />
-            }
+      <div className="app">
+        <div className="header-header">
+          <NavbarComponent
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
           />
-          <Route
-            path="/favorite"
-            element={
-              <MovieList
-                movies={favorites}
-                handleFavoritesClick={removeFavoriteMovie}
-                favoriteComponent={RemoveFavorite}
-              />
-            }
-          />
-        </Routes>
+        </div>
+        <div className="movie-container">
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <MovieList
+                  movies={movies}
+                  handleFavoritesClick={addFavoriteMovie}
+                  favoriteComponent={AddFavoriteMovie}
+                />
+              }
+            />
+            <Route
+              path="/favorite"
+              element={
+                <MovieList
+                  movies={favorites}
+                  handleFavoritesClick={removeFavoriteMovie}
+                  favoriteComponent={RemoveFavorite}
+                />
+              }
+            />
+          </Routes>
+        </div>
+        <div className="footer-container">
+          <FooterComponent />
+        </div>
       </div>
-      <FooterComponent />
     </Router>
   );
 };
